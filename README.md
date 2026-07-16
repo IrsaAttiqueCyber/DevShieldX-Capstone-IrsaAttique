@@ -62,14 +62,7 @@ The assessment followed a highly organized five-stage security evaluation lifecy
 
 ### OS Command Injection Fix (PHP)
 Avoid raw execution wrappers. Implement strong validation filters on dynamic parameters:
-```php
-$target =$_POST['ip'];
-if (filter_var($target, FILTER_VALIDATE_IP)) {
-    $cmd = shell_exec("ping -c 4 " . escapeshellarg($target));
-    echo "<pre>{$cmd}</pre>";
-} else {
-    echo "Error: Invalid IP Address format.";
-}
+
 
 ###SQL Injection Fix 
 Bind variables securely using parameterized SQL statements:
